@@ -1,5 +1,4 @@
 
-
 let header__loginLink =  document.querySelector(".header__login-link");
 let modal  = document.querySelector(".modal");
 let deleteModal = document.querySelector(".cadr__x");
@@ -11,10 +10,7 @@ header__loginLink.addEventListener('click', (e) => {
     e.preventDefault();
     
     console.log("asadbek");
-    modal.classList.toggle("show")
-    body.style.backgroundColor = "#807c9b94"
-    
-    // window.location.href = "myAcount.html"
+    window.location.href = "myAcount.html"
 
 }); 
 
@@ -164,20 +160,91 @@ for (let i = 0; i < studets__bodyTop.length; i++) {
   }
 
 
-  let SingUp = document.querySelector("#SingUp");
-
-  SingUp.addEventListener("click", (e) => {
-
-    e.preventDefault();
-
-    window.location.href = "myAcount.html"
-    // console.log(userNameValue);
-})
 
 
-let userName = document.querySelector("#input1");
-let userEmail = document.querySelector("#input2");
-let userPassword = document.querySelector("#input3");
+
+
+// ferbase is
+
+
+// var firebaseConfig = {
+//     apiKey: "AIzaSyDWslmRhJ8Bq3E_4qX3WIewRJJTo-g4Ybo",
+//     authDomain: "singup-ccddb.firebaseapp.com",
+//     databaseURL: "https://singup-ccddb-default-rtdb.firebaseio.com",
+//     projectId: "singup-ccddb",
+//     storageBucket: "singup-ccddb.appspot.com",
+//     messagingSenderId: "200245720914",
+//     appId: "1:200245720914:web:0e355d6483e250b838ac8b",
+//     measurementId: "G-CH3L9B0Y1H"
+//   };
+//   // Initialize Firebase
+//   firebase.initializeApp(firebaseConfig);
+//   firebase.analytics();
+
+// // let's code 
+// var datab  = firebase.database().ref('data');
+// function UserRegister(){
+// var email = document.getElementById('eemail').value;
+// var password = document.getElementById('lpassword').value;
+// firebase.auth().createUserWithEmailAndPassword(email,password).then(function(){
+    
+// }).catch(function (error){
+//     var errorcode = error.code;
+//     var errormsg = error.message;
+// });
+// }
+// const auth = firebase.auth();
+// function SignIn(){
+//     var email = document.getElementById('eemail').value;
+//     var password = document.getElementById('lpassword').value;
+//     const promise = auth.signInWithEmailAndPassword(email,password);
+//     promise.catch( e => alert(e.msg));
+//     window.open("https://www.google.com","_self");
+// }
+// document.getElementById('form').addEventListener('submit', (e) => {
+//     e.preventDefault();
+//     var userInfo = datab.push();
+//     userInfo.set({
+//         name: getId('fname'),
+//         email : getId('eemail'),
+//         password : getId('lpassword')
+//     });
+//     alert("Successfully Signed Up");
+//     console.log("sent");
+//     document.getElementById('form').reset();
+// });
+// function  getId(id){
+//     return document.getElementById(id).value;
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// let userName = document.querySelector("#input1");
+// let userEmail = document.querySelector("#input2");
+// let userPassword = document.querySelector("#input3");
+
+
+
+
+
+
+
 
 // let userNameValue = userName.value;
 
@@ -205,3 +272,29 @@ let userPassword = document.querySelector("#input3");
 // }
 
 // cardEdit();
+
+
+
+/* <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyBjtWY_055d-etYcwnDHcV4z67PzLVw4xQ",
+    authDomain: "singuppage-cffae.firebaseapp.com",
+    projectId: "singuppage-cffae",
+    storageBucket: "singuppage-cffae.appspot.com",
+    messagingSenderId: "429162954977",
+    appId: "1:429162954977:web:9f9d2e5bac4bf193eb37a0",
+    measurementId: "G-7EMWZFWHFW"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script> */

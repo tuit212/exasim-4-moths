@@ -240,3 +240,89 @@ for (let i = 0; i < box__right__books.length; i++) {
       }
     });
   }
+
+
+
+  let header__loginLink = document.querySelector(".header__login-link");
+
+  function userNames() {
+
+    let userNamesRes = " "
+
+    userNamesRes += `
+    <p> My content </p>
+
+    `
+    header__loginLink.innerHTML = userNamesRes
+  }
+
+  userNames();
+
+
+  let section__modal = document.querySelector(".section-modal");
+  header__loginLink.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    let body = document.querySelector("body")
+
+    section__modal.style.display = "block";
+    body.style.backgroundColor = "#000aa";
+    
+
+  });
+
+
+
+
+
+
+  
+var firebaseConfig = {
+    apiKey: "AIzaSyDWslmRhJ8Bq3E_4qX3WIewRJJTo-g4Ybo",
+    authDomain: "singup-ccddb.firebaseapp.com",
+    databaseURL: "https://singup-ccddb-default-rtdb.firebaseio.com",
+    projectId: "singup-ccddb",
+    storageBucket: "singup-ccddb.appspot.com",
+    messagingSenderId: "200245720914",
+    appId: "1:200245720914:web:0e355d6483e250b838ac8b",
+    measurementId: "G-CH3L9B0Y1H"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+
+// let's code 
+var datab  = firebase.database().ref('data');
+function UserRegister(){
+var email = document.getElementById('eemail').value;
+var password = document.getElementById('lpassword').value;
+firebase.auth().createUserWithEmailAndPassword(email,password).then(function(){
+    
+}).catch(function (error){
+    var errorcode = error.code;
+    var errormsg = error.message;
+});
+}
+const auth = firebase.auth();
+function SignIn(){
+    var email = document.getElementById('eemail').value;
+    var password = document.getElementById('lpassword').value;
+    const promise = auth.signInWithEmailAndPassword(email,password);
+    promise.catch( e => alert(e.msg));
+    window.open("https://www.google.com","_self");
+}
+document.getElementById('form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    var userInfo = datab.push();
+    userInfo.set({
+        name: getId('fname'),
+        email : getId('eemail'),
+        password : getId('lpassword')
+    });
+    alert("Successfully Signed Up");
+    console.log("sent");
+    document.getElementById('form').reset();
+});
+function  getId(id){
+    return document.getElementById(id).value;
+}
